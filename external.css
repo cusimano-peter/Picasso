@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Gallery layout using flex for smaller screens and grid for larger screens */
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.gallery-item {
+    background: lightgray;
+    padding: 1rem;
+    border: 1px solid black;
+    /* Use of z-index */
+    z-index: 1;
+    position: relative;
+}
+
+.item1:hover {
+    z-index: 2; /* On hover, bring to front using z-index */
+}
+
+/* Hierarchical selector, styles for gallery items when inside the .gallery */
+.gallery .gallery-item {
+    border-radius: 10px;
+}
+
+/* Form styling */
+.visitor-form {
+    padding: 1rem;
+    margin-top: 2rem;
+    border: 1px solid black;
+    width: 100%;
+    max-width: 400px; /* Using px as one of the CSS units */
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.visitor-form label, .visitor-form input {
+    width: 100%;
+    margin-bottom: 1rem; /* Using rem as one of the CSS units */
+    padding: 0.5em; /* Using em as one of the CSS units */
+}
+
+.visitor-form input[type="submit"] {
+    width: auto;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.gallery-item img {
+    width: 100%; 
+    height: auto;
+    display: block;
+}
