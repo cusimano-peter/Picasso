@@ -1,67 +1,121 @@
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+  background-color: #305dcf;
 }
 
-/* Gallery layout using flex for smaller screens and grid for larger screens */
-.gallery {
-    display: grid;
-    grid-template-columns: 1fr;
-    flex-wrap: wrap;
-    gap: 1rem;
+.emoji {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  width: 300px;
+  background-image: radial-gradient(#feca3e 58%, #ff8000 80%);
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 30px 30px 35px rgba(0, 0, 0, 0.25);
 }
 
+.face .eyes {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 50px;
+}
+
+.eye {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.eye.left {
+  box-shadow: inset 15px 15px 0 5px #305dcf;
+}
+
+.eye.right {
+  box-shadow: inset -15px 15px 0 5px #305dcf;
+}
+
+.face .mouth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+.teeth {
+  background-color: #fff;
+  width: 140px;
+  height: 60px;
+  border-radius: 0 0 15px 15px;
+  position: relative;
+  z-index: 2;
+}
+
+.tongue {
+  background-color: #ff4d6d;
+  width: 100px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -20px;
+  z-index: 1;
+}
+
+/* .gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
 @media (min-width: 768px) {
-    .gallery {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-    }
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .gallery-item {
-    background: lightgray;
-    padding: 1rem;
-    border: 1px solid black;
-    /* Use of z-index */
-    z-index: 1;
-    position: relative;
-}
-
-.item1:hover {
-    z-index: 2; /* On hover, bring to front using z-index */
-}
-
-/* Hierarchical selector, styles for gallery items when inside the .gallery */
-.gallery .gallery-item {
-    border-radius: 10px;
-}
-
-/* Form styling */
-.visitor-form {
-    padding: 1rem;
-    margin-top: 2rem;
-    border: 1px solid black;
-    width: 100%;
-    max-width: 400px; /* Using px as one of the CSS units */
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.visitor-form label, .visitor-form input {
-    width: 100%;
-    margin-bottom: 1rem; /* Using rem as one of the CSS units */
-    padding: 0.5em; /* Using em as one of the CSS units */
-}
-
-.visitor-form input[type="submit"] {
-    width: auto;
-    margin-left: 0;
-    margin-right: 0;
+  background: #f9f9f9;
+  padding: 1rem;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  text-align: center;
 }
 
 .gallery-item img {
-    width: 100%; 
-    height: auto;
-    display: block;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+.item1:hover {
+  z-index: 2; /* On hover, bring to front using z-index */
+/* Form styling */
+.visitor-form {
+  padding: 1rem;
+  margin-top: 2rem;
+  border: 1px solid black;
+  width: 100%;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.visitor-form label,
+.visitor-form input {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5em;
+}
+
+.visitor-form input[type="submit"] {
+  width: auto;
+  margin-left: 0;
+  margin-right: 0;
 }
